@@ -21,7 +21,7 @@
             <i class='bx bxl-c-plus-plus'></i>
             <span class="logo_name">CodingLab</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links">  
             <li>
                 <a href="#">
                     <i class='bx bx-grid-alt'></i>
@@ -32,30 +32,24 @@
                 </ul>
             </li>
 
-           
-
             <li>
                 <div class="iocn-link">
                     <a href="#">
-                        <i class='bx bx-book-alt'></i>
-                        <span class="link_name">Admin</span>
+                        <i class='bx bx-collection'></i>
+                        <span class="link_name">User</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <ul class="sub-menu">
-
-                    <li><a href="adminmain.php">Show All User</a></li>
-                    <li><a href="backgroundfront.php">Set Background</a></li>
-                    <li><a href="setfooterfront.php">Set Footer</a></li>
+                    <li><a href="userprf.php">Show Profile</a></li>
                 </ul>
             </li>
-            
-            
-           
-           
-            
-            
 
+            
+            
+            
+           
+        
             <li>
                 <div class="profile-details">
                     <div class="profile-content">

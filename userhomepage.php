@@ -6,6 +6,19 @@ $email=$_SESSION['email'];
 
 $query="SELECT * FROM newuser WHERE email='$email' ";
 
+$backquery="SELECT * FROM background ";
+
+$footerquery="SELECT * FROM footer ";
+
+$footerdata=mysqli_query($con,$footerquery);
+$footertotal=mysqli_num_rows($footerdata);
+$footerresult=mysqli_fetch_assoc($footerdata);
+
+$backdata=mysqli_query($con,$query);
+$backtotal=mysqli_num_rows($backdata);
+$backresult=mysqli_fetch_assoc($backdata);
+
+
 $data=mysqli_query($con,$query);
 
 $total=mysqli_num_rows($data);
@@ -20,8 +33,16 @@ $result=mysqli_fetch_assoc($data);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="portfolio.css">
+
+    <style>
+        .hero{
+            background-image: url("<?php echo $backresult['backimage'] ?>");
+        }
+    </style>
 </head>
 <body>
+
+   
     
     <div class="hero">
         <nav>
@@ -29,7 +50,8 @@ $result=mysqli_fetch_assoc($data);
 
             <ul>
                 <li><a href="#">About Us</a></li>
-                <li><a href="homepage.php">Update Profile</a></li>
+                <li><a href="employerfront.php">Employer</a></li>
+                <li><a href="useradmin.php">Update Profile</a></li>
                 <li><a href="logout.php">logout</a></li>
             </ul>
 
@@ -67,13 +89,13 @@ $result=mysqli_fetch_assoc($data);
 
     <div class="service">
         <div class="title">
-            <h2>Our Service</h2>
+            <h2>My Slkill</h2>
         </div>
         <div class="box">
 
             <div class="card">
                 <i class="fas fa-bars"></i>
-                <h5>Andorid Development</h5>
+                <h5>Web Developer</h5>
                 <div class="pra">
                     <p>
                         <?php
@@ -100,15 +122,16 @@ $result=mysqli_fetch_assoc($data);
 
     <footer>
         <p><?php echo $result['name'] ?></p>
-        <p>For more Web Development code - please click on the below to suscribe to my channel:</p>
+        <p><?php echo $footerresult['fast_line'] ?></p>
+        <p style="color: #fff;"><?php echo $footerresult['second_line'] ?></p>
 
-        <div class="social">
+        <!-- <div class="social">
             <a href="#"> <img src="http://drive.google.com/uc?export=view&id=1NhrITWHiwI1fJB1CGzPxGPYP01MY6YVv" alt="mustakim"> </a>
             <a href="#"> <img src="http://drive.google.com/uc?export=view&id=1NhrITWHiwI1fJB1CGzPxGPYP01MY6YVv" alt="mustakim"> </a>
             <a href="#"> <img src="http://drive.google.com/uc?export=view&id=1NhrITWHiwI1fJB1CGzPxGPYP01MY6YVv" alt="mustakim"> </a>
-        </div>
+        </div> -->
 
-        <p class="end">Copy Right By Md.Mustakim</p>
+        <p class="end"><?php echo $footerresult['copyright'] ?></p>
     </footer>
     
 </body>
