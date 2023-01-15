@@ -14,7 +14,7 @@ $footerdata=mysqli_query($con,$footerquery);
 $footertotal=mysqli_num_rows($footerdata);
 $footerresult=mysqli_fetch_assoc($footerdata);
 
-$backdata=mysqli_query($con,$query);
+$backdata=mysqli_query($con,$backquery);
 $backtotal=mysqli_num_rows($backdata);
 $backresult=mysqli_fetch_assoc($backdata);
 
@@ -74,7 +74,7 @@ $result=mysqli_fetch_assoc($data);
             <img src="<?php echo $result['image'] ?>" alt="">
             <div class="about-text">
                 <h2>About Me</h2>
-                <h5>Developer and <span>Android Developer</span> </h5>
+                <h5>Developer and <span><?php echo $result['profession'] ?></span> </h5>
                 <p>
                     <?php
                     echo $result['description'];

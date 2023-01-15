@@ -1,6 +1,8 @@
 <?php
 session_start();
-include('homepage.php');
+//include('homepage.php');
+
+include('useradmin.php');
 
 ?>
 
